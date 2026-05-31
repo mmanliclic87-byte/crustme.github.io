@@ -78,12 +78,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Crust Me Pizza" },
       { property: "og:description", content: "We're a small, family-run pizza trailer with a big passion for great food." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Crust Me Pizza" },
       { name: "twitter:description", content: "We're a small, family-run pizza trailer with a big passion for great food." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a926744c-de97-47da-8865-8e838f6591d7/id-preview-8f9f69e4--ef2a98bf-1b23-4928-afa1-999413c7ec4d.lovable.app-1779744848196.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a926744c-de97-47da-8865-8e838f6591d7/id-preview-8f9f69e4--ef2a98bf-1b23-4928-afa1-999413c7ec4d.lovable.app-1779744848196.png" },
+      { property: "og:image", content: "https://vgqbfkmfndlnwiwiabnj.supabase.co/storage/v1/object/public/public-assets/og-hero-pizza.webp" },
+      { name: "twitter:image", content: "https://vgqbfkmfndlnwiwiabnj.supabase.co/storage/v1/object/public/public-assets/og-hero-pizza.webp" },
     ],
     links: [
       {
