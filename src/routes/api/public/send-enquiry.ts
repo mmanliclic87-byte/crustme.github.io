@@ -23,6 +23,8 @@ export const Route = createFileRoute('/api/public/send-enquiry')({
   server: {
     handlers: {
       POST: async ({ request }) => {
+        return new Response(JSON.stringify({ error: 'Enquiries are temporarily closed. Please contact us directly via email or phone.' }), { status: 503, headers: { 'Content-Type': 'application/json' } });
+      },
         const LOVABLE_API_KEY = process.env.LOVABLE_API_KEY;
         const RESEND_API_KEY = process.env.RESEND_API_KEY;
         if (!LOVABLE_API_KEY) return new Response(JSON.stringify({ error: 'LOVABLE_API_KEY not configured' }), { status: 500 });
