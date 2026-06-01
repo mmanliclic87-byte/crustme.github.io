@@ -212,20 +212,67 @@ function Enquiries() {
         <h2 className="text-left text-4xl sm:text-5xl font-bold text-white mb-4">Enquiries</h2>
         <p className="text-left text-white/60 mb-10">Book us for your next event. We'll get back to you shortly.</p>
         <div className="max-w-2xl">
-          <div className="rounded-lg border border-white/10 bg-white/5 px-6 py-8 text-center">
-            <p className="text-lg font-semibold text-white mb-2">Enquiries are temporarily closed</p>
-            <p className="text-white/60 mb-4">Please reach out to us directly:</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-white">
-              <a href="tel:+61416436036" className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 hover:bg-white/20 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.23c1.2.49 2.5.76 3.84.76a1 1 0 011 1V19a1 1 0 01-1 1C10.89 20 4 13.11 4 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.34.27 2.64.76 3.84a1 1 0 01-.23 1.11l-2.2 2.2z"/></svg>
-                0416 436 036
-              </a>
-              <a href="mailto:events@crustme.com.au" className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2.5 hover:bg-white/20 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                events@crustme.com.au
-              </a>
-            </div>
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-5"
+        >
+          <div>
+            <label className="block text-sm font-medium text-white/80 mb-2">Name</label>
+            <input
+              name="name"
+              type="text"
+              required
+              maxLength={100}
+              className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none transition"
+              placeholder="Your name"
+            />
           </div>
+          <div>
+            <label className="block text-sm font-medium text-white/80 mb-2">Email</label>
+            <input
+              name="email"
+              type="email"
+              required
+              maxLength={255}
+              className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none transition"
+              placeholder="you@example.com"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-white/80 mb-2">Contact Number</label>
+            <input
+              name="phone"
+              type="tel"
+              required
+              maxLength={30}
+              className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none transition"
+              placeholder="+1 (555) 000-0000"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-white/80 mb-2">Message</label>
+            <textarea
+              name="message"
+              required
+              rows={5}
+              maxLength={1000}
+              className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none transition resize-none"
+              placeholder="Tell us about your event..."
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={submitting}
+            className="w-full rounded-lg bg-white px-6 py-3 font-semibold text-black hover:bg-white/90 transition disabled:opacity-60"
+          >
+            {submitting ? 'Sending…' : 'Send Enquiry'}
+          </button>
+          {status && (
+            <p className={`text-sm ${status.type === 'ok' ? 'text-emerald-400' : 'text-red-400'}`}>
+              {status.msg}
+            </p>
+          )}
+        </form>
         </div>
       </div>
     </section>
