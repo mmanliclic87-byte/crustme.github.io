@@ -187,11 +187,20 @@ function Enquiries() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
-      if (!res.ok) throw new Error('Request failed');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        const detail =
+          (data?.details && (data.details.message || JSON.stringify(data.details))) ||
+          data?.error ||
+          `Request failed (${res.status})`;
+        throw new Error(detail);
+      }
       setStatus({ type: 'ok', msg: "Thanks! We'll be in touch soon." });
       form.reset();
     } catch (err) {
-      setStatus({ type: 'err', msg: 'Something went wrong. Please try again or email us directly.' });
+      const msg = err instanceof Error ? err.message : 'Something went wrong.';
+      console.error('Enquiry submit failed:', err);
+      setStatus({ type: 'err', msg });
     } finally {
       setSubmitting(false);
     }
