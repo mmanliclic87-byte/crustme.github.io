@@ -56,7 +56,7 @@ export const Route = createFileRoute('/api/public/send-enquiry')({
             'X-Connection-Api-Key': RESEND_API_KEY,
           },
           body: JSON.stringify({
-            from: 'Crust Me Enquiries <onboarding@resend.dev>',
+            from: 'Crust Me Enquiries <events@crustme.com.au>',
             to: ['events@crustme.com.au'],
             reply_to: email,
             subject: `New enquiry from ${name}`,
