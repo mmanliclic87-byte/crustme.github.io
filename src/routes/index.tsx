@@ -325,7 +325,7 @@ function Footer() {
             </svg>
             Follow us on TikTok
           </a>
-          <p className="text-xs text-white/40">Website by Matthew Manliclic - mmanliclic87@gmail.com</p>
+          <p className="text-xs text-white/40">Website by Matthew Manliclic - <span className="text-white">mmanliclic87@gmail.com</span></p>
         </div>
         <div className="text-left sm:text-right text-sm text-white/70 space-y-1">
           <p>
