@@ -182,7 +182,15 @@ function Enquiries() {
     setSubmitting(true);
     setStatus(null);
     try {
-      const res = await fetch('/api/public/send-enquiry', {
+      // On Lovable preview/published domains, the API is same-origin.
+      // On GitHub Pages (or any other host), call the Lovable backend directly.
+      const isLovable =
+        typeof window !== 'undefined' &&
+        (window.location.hostname === 'localhost' || window.location.hostname.endsWith('lovable.app'));
+      const endpoint = isLovable
+        ? '/api/public/send-enquiry'
+        : 'https://crust-me-landing.lovable.app/api/public/send-enquiry';
+      const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
