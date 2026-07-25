@@ -11,7 +11,6 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     tsconfigPaths(),
-    viteReact(),
     tanstackStart({
       prerender: {
         enabled: true,
@@ -19,5 +18,6 @@ export default defineConfig({
         autoSubfolderIndex: true,
       },
     }),
+    viteReact(),
   ],
 });
