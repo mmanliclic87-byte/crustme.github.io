@@ -189,7 +189,7 @@ function Enquiries() {
         (window.location.hostname === 'localhost' || window.location.hostname.endsWith('lovable.app'));
       const endpoint = isLovable
         ? '/api/public/send-enquiry'
-        : 'https://crust-me-landing.lovable.app/api/public/send-enquiry';
+        : 'https://project--5079be97-7af2-4cee-9a20-26b08d8a9c02.lovable.app/api/public/send-enquiry';
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
