@@ -156,8 +156,14 @@
     transition: opacity 900ms ease-out, transform 900ms ease-out;
     will-change: opacity, transform;
   }
+  .reveal-from-bottom {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 900ms ease-out, transform 900ms ease-out;
+    will-change: opacity, transform;
+  }
   .reveal-in {
     opacity: 1 !important;
-    transform: translateX(0) !important;
+    transform: translate(0, 0) !important;
   }
 }
