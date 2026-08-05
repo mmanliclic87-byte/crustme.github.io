@@ -172,6 +172,26 @@ function OurStory() {
   );
 }
 
+function CurrentMenu() {
+  const menuRef = useRevealOnScroll<HTMLDivElement>();
+  return (
+    <section id="current-menu" className="bg-black py-24 pl-10 sm:pl-20 lg:pl-32 pr-4 sm:pr-6">
+      <div ref={menuRef} className="reveal-from-bottom mx-auto max-w-7xl">
+        <h2 className="text-left text-4xl sm:text-5xl font-bold text-white mb-4">Current Menu</h2>
+        <div className="h-1 w-20 bg-white/30 mb-10" />
+        <div className="max-w-3xl">
+          <img
+            src={currentMenu.url}
+            alt="Crust Me current menu with pizza prices and ingredients"
+            className="w-full h-auto rounded-xl border border-white/10 shadow-2xl"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Enquiries() {
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState<null | { type: 'ok' | 'err'; msg: string }>(null);
