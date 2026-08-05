@@ -380,6 +380,7 @@ function Index() {
       <main>
         <Hero />
         <OurStory />
+        <CurrentMenu />
         <Enquiries />
       </main>
       <Footer />
