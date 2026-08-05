@@ -6,6 +6,7 @@ import heroWordmark from "@/assets/crust-me-wordmark.png";
 import pizza1 from "@/assets/pizza-1.jpg";
 import pizza2 from "@/assets/pizza-2.jpg";
 import pizza3 from "@/assets/pizza-3.jpg";
+import currentMenu from "@/assets/current-menu.jpeg.asset.json";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 
 export const Route = createFileRoute("/")({
@@ -50,6 +51,12 @@ function Header() {
             className="rounded-full px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition"
           >
             Our Story
+          </button>
+          <button
+            onClick={() => scrollToId("current-menu")}
+            className="rounded-full px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition"
+          >
+            Menu
           </button>
           <button
             onClick={() => scrollToId("enquiries")}
@@ -160,6 +167,26 @@ function OurStory() {
           </div>
         </div>
         <div aria-hidden className="hidden lg:block" />
+      </div>
+    </section>
+  );
+}
+
+function CurrentMenu() {
+  const menuRef = useRevealOnScroll<HTMLDivElement>();
+  return (
+    <section id="current-menu" className="bg-black py-24 pl-10 sm:pl-20 lg:pl-32 pr-4 sm:pr-6">
+      <div ref={menuRef} className="reveal-from-bottom mx-auto max-w-7xl">
+        <h2 className="text-left text-4xl sm:text-5xl font-bold text-white mb-4">Current Menu</h2>
+        <div className="h-1 w-20 bg-white/30 mb-10" />
+        <div className="max-w-3xl">
+          <img
+            src={currentMenu.url}
+            alt="Crust Me current menu with pizza prices and ingredients"
+            className="w-full h-auto rounded-xl border border-white/10 shadow-2xl"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
   );
@@ -353,6 +380,7 @@ function Index() {
       <main>
         <Hero />
         <OurStory />
+        <CurrentMenu />
         <Enquiries />
       </main>
       <Footer />
