@@ -6,6 +6,7 @@ import heroWordmark from "@/assets/crust-me-wordmark.png";
 import pizza1 from "@/assets/pizza-1.jpg";
 import pizza2 from "@/assets/pizza-2.jpg";
 import pizza3 from "@/assets/pizza-3.jpg";
+import currentMenu from "@/assets/current-menu.jpeg.asset.json";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 
 export const Route = createFileRoute("/")({
@@ -50,6 +51,12 @@ function Header() {
             className="rounded-full px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition"
           >
             Our Story
+          </button>
+          <button
+            onClick={() => scrollToId("current-menu")}
+            className="rounded-full px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition"
+          >
+            Menu
           </button>
           <button
             onClick={() => scrollToId("enquiries")}
