@@ -6,7 +6,7 @@ import heroWordmark from "@/assets/crust-me-wordmark.png";
 import pizza1 from "@/assets/pizza-1.jpg";
 import pizza2 from "@/assets/pizza-2.jpg";
 import pizza3 from "@/assets/pizza-3.jpg";
-import currentMenu from "@/assets/current-menu.jpeg.asset.json";
+import currentMenu from "@/assets/current-menu.jpeg";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 
 export const Route = createFileRoute("/")({
@@ -181,7 +181,7 @@ function CurrentMenu() {
         <div className="h-1 w-20 bg-white/30 mb-10" />
         <div className="max-w-3xl">
           <img
-            src={currentMenu.url}
+            src={currentMenu}
             alt="Crust Me current menu with pizza prices and ingredients"
             className="w-full h-auto rounded-xl border border-white/10 shadow-2xl"
             loading="lazy"
