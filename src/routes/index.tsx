@@ -7,6 +7,7 @@ import pizza1 from "@/assets/pizza-1.jpg";
 import pizza2 from "@/assets/pizza-2.jpg";
 import pizza3 from "@/assets/pizza-3.jpg";
 import currentMenu from "@/assets/current-menu.jpeg";
+import cateringMenu from "@/assets/catering-menu.jpeg";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 
 export const Route = createFileRoute("/")({
