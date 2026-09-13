@@ -178,15 +178,27 @@ function CurrentMenu() {
   return (
     <section id="current-menu" className="bg-black py-24 pl-10 sm:pl-20 lg:pl-32 pr-4 sm:pr-6">
       <div ref={menuRef} className="reveal-from-bottom mx-auto max-w-7xl">
-        <h2 className="text-left text-4xl sm:text-5xl font-bold text-white mb-4">Current Menu</h2>
+        <h2 className="text-left text-4xl sm:text-5xl font-bold text-white mb-4">Our Menus</h2>
         <div className="h-1 w-20 bg-white/30 mb-10" />
-        <div className="max-w-3xl">
-          <img
-            src={currentMenu}
-            alt="Crust Me current menu with pizza prices and ingredients"
-            className="w-full h-auto rounded-xl border border-white/10 shadow-2xl"
-            loading="lazy"
-          />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div>
+            <h3 className="text-xl font-semibold text-white mb-4">Current Menu</h3>
+            <img
+              src={currentMenu}
+              alt="Crust Me current menu with pizza prices and ingredients"
+              className="w-full h-auto rounded-xl border border-white/10 shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-white mb-4">Catering Menu</h3>
+            <img
+              src={cateringMenu}
+              alt="Crust Me catering menu with pizza prices and ingredients"
+              className="w-full h-auto rounded-xl border border-white/10 shadow-2xl"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </section>
