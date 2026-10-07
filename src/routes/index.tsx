@@ -47,12 +47,6 @@ function Header() {
         </div>
         <nav className="flex items-center gap-2 sm:gap-4">
           <button
-            onClick={() => scrollToId("our-story")}
-            className="rounded-full px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition"
-          >
-            Our Story
-          </button>
-          <button
             onClick={() => scrollToId("current-menu")}
             className="rounded-full px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition"
           >
