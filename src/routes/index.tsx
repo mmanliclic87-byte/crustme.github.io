@@ -123,7 +123,7 @@ function Hero() {
               events@crustme.com.au
             </a>
           </p>
-          <p>
+          <p className="text-white">
             Address: 76 Atchinson Road, Macquarie Fields NSW 2564
           </p>
         </div>
@@ -345,7 +345,7 @@ function Footer() {
               events@crustme.com.au
             </a>
           </p>
-          <p>
+          <p className="text-white">
             Address: 76 Atchinson Road, Macquarie Fields NSW 2564
           </p>
         </div>
